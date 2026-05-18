@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuyRight-AI – KI-Kaufberater für smarte Kaufentscheidungen</title>
+  <meta name="description" content="BuyRight-AI analysiert Produkte, vergleicht Preise und gibt KI-gestützte Kaufempfehlungen. Kostenlos starten. Kein Login erforderlich.">
+  <meta name="keywords" content="KI Kaufberater, Produktvergleich KI, smarter einkaufen, BuyRight-AI, AI Shopping Assistent, Kaufberatung online">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="BuyRight-AI">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="app-icon-light.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://buyright-ai.vercel.app/">
+
+  <meta property="og:title" content="BuyRight-AI – Kaufe smarter. Mit KI zur richtigen Entscheidung.">
+  <meta property="og:description" content="Kostenlos, kein Login, KI-gestützt: Vergleiche Produkte und triff die beste Kaufentscheidung.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="BuyRight-AI">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BuyRight-AI – KI-Kaufberater">
+  <meta name="twitter:description" content="Keine Pflichtregistrierung. Keine Werbung im Flow. KI-Analyse in Sekunden.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BuyRight-AI",
+    "applicationCategory": "ShoppingApplication",
+    "operatingSystem": "Web",
+    "description": "KI-gestützter Kaufberater ohne Login mit Produktanalyse, KI-Vergleich und personalisierten Kaufempfehlungen.",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Kostenlos nutzbar"},
+    "author": {"@type": "Organization", "name": "BuyRight-AI"}
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Muss ich ein Konto erstellen?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. BuyRight-AI ist ohne Login nutzbar."}},
+      {"@type": "Question", "name": "Welche Produkte werden analysiert?", "acceptedAnswer": {"@type": "Answer", "text": "Elektronik, Haushaltsgeräte, Software und viele weitere Kategorien."}},
+      {"@type": "Question", "name": "Ist BuyRight-AI kostenlos?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, Kernfunktionen sind kostenlos nutzbar."}},
+      {"@type": "Question", "name": "Wie sicher sind meine Daten?", "acceptedAnswer": {"@type": "Answer", "text": "Deine Anfragen werden DSGVO-konform verarbeitet."}}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      --color-bg: #f5f5f7;
+      --color-bg-alt: #eeeef0;
+      --color-surface: #ffffff;
+      --color-border: rgba(0,0,0,.08);
+      --color-border-hover: rgba(0,0,0,.14);
+      --color-border-accent: rgba(37,99,235,.18);
+      --color-accent: #2563eb;
+      --color-accent-dim: #1d4ed8;
+      --color-accent-soft: rgba(37,99,235,.06);
+      --color-text-main: #111113;
+      --color-muted: #555558;
+      --color-faint: #8e8e93;
+      --font-sans: 'Inter', system-ui, sans-serif;
+    }
+    body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text-main); }
+  </style>
+</head>
+
+<body class="overflow-x-hidden antialiased leading-relaxed">
+  <div class="gradient-orbs" aria-hidden="true">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+  </div>
+
+  <div class="fixed top-0 left-0 right-0 z-[60] overflow-hidden" style="height:48px;background:#0a0a0c;border-bottom:1px solid rgba(37,99,235,.25);">
+    <div style="display:flex;align-items:center;height:100%;white-space:nowrap;animation:ticker-scroll 18s linear infinite;">
+      <span class="ticker-item">BUYRIGHT-AI &mdash; KI-gestützt. Smarter kaufen. Bessere Entscheidungen.</span>
+      <span class="ticker-item">BUYRIGHT-AI &mdash; KI-gestützt. Smarter kaufen. Bessere Entscheidungen.</span>
+      <span class="ticker-item">BUYRIGHT-AI &mdash; KI-gestützt. Smarter kaufen. Bessere Entscheidungen.</span>
+      <span class="ticker-item">BUYRIGHT-AI &mdash; KI-gestützt. Smarter kaufen. Bessere Entscheidungen.</span>
+    </div>
+  </div>
+
+  <nav class="fixed top-[48px] left-0 right-0 z-50 h-16 flex items-center transition-all duration-400" id="nav">
+    <div class="w-full max-w-[1100px] mx-auto px-5 md:px-10 flex items-center justify-between">
+      <a href="#" class="hover:opacity-70 transition-opacity flex items-center gap-2" style="text-decoration:none;">
+        <img src="app-icon-light.svg" alt="BuyRight-AI Icon" style="width:28px;height:28px;">
+        <span style="font-size:1.5rem;font-weight:900;letter-spacing:-0.5px;color:#2563eb;">BuyRight-AI</span>
+      </a>
+      <div class="hidden md:flex items-center gap-4">
+        <div class="nav-links-pill">
+          <a href="#problem" class="nav-link" data-nav-section="problem">Problem</a>
+          <a href="#warum" class="nav-link" data-nav-section="warum">Vorteile</a>
+          <a href="#funktionen" class="nav-link" data-nav-section="funktionen">Funktionen</a>
+          <a href="#process" class="nav-link" data-nav-section="process">Prozess</a>
+          <a href="#ablauf" class="nav-link" data-nav-section="ablauf">So geht's</a>
+          <a href="#faq" class="nav-link" data-nav-section="faq">FAQ</a>
+        </div>
+        <a href="https://buyright-ai.vercel.app/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;background:#2563eb;color:#fff;font-size:.8rem;font-weight:700;border-radius:999px;text-decoration:none;">Zur App</a>
+        <div class="flex items-center gap-2 text-sm font-semibold" style="color:var(--color-muted);background:rgba(255,255,255,0.05);padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);">
+          <a href="index.html" style="color:#2563eb;text-decoration:none;">DE</a>
+          <span style="opacity:0.3">|</span>
+          <a href="index.en.html" class="hover:text-white transition-colors" style="text-decoration:none;">EN</a>
+        </div>
+      </div>
+      <button class="nav-hamburger md:hidden" id="navHamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div id="mobileMenu" aria-hidden="true">
+    <button style="position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.2rem;" onclick="closeMobileMenu()">&times;</button>
+    <div class="mm-brand">BuyRight-AI</div>
+    <div class="mm-grid">
+      <a href="#problem" class="mm-link" onclick="closeMobileMenu()">Problem</a>
+      <a href="#warum" class="mm-link" onclick="closeMobileMenu()">Vorteile</a>
+      <a href="#funktionen" class="mm-link" onclick="closeMobileMenu()">Funktionen</a>
+      <a href="#process" class="mm-link" onclick="closeMobileMenu()">Prozess</a>
+      <a href="#ablauf" class="mm-link" onclick="closeMobileMenu()">So geht's</a>
+      <a href="#faq" class="mm-link" onclick="closeMobileMenu()">FAQ</a>
+      <a href="#final-cta" class="mm-link" onclick="closeMobileMenu()">Starten</a>
+    </div>
+    <div style="margin-top:2rem;display:flex;justify-content:center;gap:1.5rem;font-size:1.2rem;font-weight:700;">
+      <a href="index.html" style="color:#2563eb;text-decoration:none;">DE</a>
+      <span style="color:var(--color-border);">|</span>
+      <a href="index.en.html" style="color:var(--color-muted);text-decoration:none;">EN</a>
+    </div>
+  </div>
+
+  <section class="relative flex items-center justify-center overflow-hidden pt-[160px] pb-[130px]" id="hero">
+    <canvas id="heroParticles" class="absolute inset-0 z-[1]"></canvas>
+    <div class="absolute inset-0 z-0" style="background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(37,99,235,.09)0%,transparent 65%),radial-gradient(ellipse 50% 60% at 20% 80%,rgba(37,99,235,.05)0%,transparent 50%),radial-gradient(ellipse 45% 50% at 80% 25%,rgba(99,102,241,.07)0%,transparent 50%);"></div>
+    <div class="absolute inset-0 z-0 opacity-[.06]" style="background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 60% 55% at 50% 50%,black 0%,transparent 70%);"></div>
+
+    <div class="relative z-10 text-center max-w-[960px] px-5">
+      <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full mb-7" style="background:rgba(37,99,235,.12);border:1px solid rgba(37,99,235,.35);">
+        <img src="app-icon-light.svg" alt="BuyRight-AI" style="width:16px;height:16px;">
+        <span style="font-size:.8rem;font-weight:700;color:#3b82f6;letter-spacing:.06em;text-transform:uppercase;">KI-gestützt. Kostenlos. Kein Login.</span>
+      </div>
+
+      <h1 class="reveal text-3xl md:text-7xl lg:text-8xl font-bold leading-[1.08] tracking-tight mb-6">
+        Kaufe smarter.<br><span class="gradient-text">Mit KI zur richtigen Entscheidung.</span>
+      </h1>
+      <p class="reveal text-lg md:text-xl max-w-[680px] mx-auto leading-relaxed" style="color:var(--color-muted);">
+        BuyRight-AI analysiert Produkte, vergleicht Preise und gibt dir KI-gestützte Kaufempfehlungen – damit du nie wieder überbezahlst oder falsch kaufst.
+      </p>
+
+      <div class="reveal mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://buyright-ai.vercel.app/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 30px;background:#2563eb;color:#fff;font-size:.95rem;font-weight:700;border-radius:12px;text-decoration:none;transition:all .25s ease;box-shadow:0 4px 24px rgba(37,99,235,.3);">Jetzt kostenlos starten</a>
+      </div>
+
+      <p class="reveal mt-5 text-sm" style="color:#8e8e93;">KI-Analyse in Sekunden. Produktvergleich. Unabhängige Empfehlung.</p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-[120px] z-20" style="background:linear-gradient(to bottom, transparent, #0f1117);"></div>
+  </section>
+
+  <section class="relative section-dark" id="problem" style="padding:6.5rem 0 5rem;margin-top:-2px;">
+    <div class="max-w-[1100px] mx-auto px-5 md:px-10">
+      <h2 class="reveal text-4xl md:text-6xl font-black leading-[1.05] tracking-tight mb-6" style="color:#f0f0f2;">
+        Millionen Käufer treffen täglich<br><span style="color:#2563eb;">teure Fehlentscheidungen</span>
+      </h2>
+      <p class="reveal text-lg max-w-[620px] leading-relaxed mb-16" style="color:#9a9aaa;">Diese drei Kennzahlen zeigen, warum strukturierte KI-Kaufberatung wichtig ist: Wie groß der E-Commerce-Markt ist, wie viele Käufer Fehlkäufe bereuen und wie stark KI die Entscheidungsqualität verbessert.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="reveal text-center p-8 rounded-2xl" style="background:rgba(37,99,235,.07);border:1px solid rgba(37,99,235,.25);">
+          <span class="block stat-value font-black leading-none mb-3 tabular-nums" style="color:#2563eb;" data-target="85" data-suffix=" Mrd. €">0</span>
+          <span class="block text-lg font-semibold mb-1" style="color:#f0f0f2;">E-Commerce-Umsatz in Deutschland</span>
+          <span class="block text-xs" style="color:#7a7a88;">zeigt das Marktvolumen und warum smarte Entscheidungen zählen</span>
+        </div>
+        <div class="reveal text-center p-8 rounded-2xl" style="background:rgba(37,99,235,.07);border:1px solid rgba(37,99,235,.25);">
+          <span class="block stat-value font-black leading-none mb-3 tabular-nums" style="color:#2563eb;" data-target="62" data-suffix="%">0</span>
+          <span class="block text-lg font-semibold mb-1" style="color:#f0f0f2;">bereuen mindestens einen Kauf pro Jahr</span>
+          <span class="block text-xs" style="color:#7a7a88;">macht deutlich: Fehlkäufe sind ein Massenphänomen</span>
+        </div>
+        <div class="reveal text-center p-8 rounded-2xl" style="background:rgba(37,99,235,.07);border:1px solid rgba(37,99,235,.25);">
+          <span class="block stat-value font-black leading-none mb-3 tabular-nums" style="color:#2563eb;" data-target="3" data-suffix=".4x">0</span>
+          <span class="block text-lg font-semibold mb-1" style="color:#f0f0f2;">bessere Kaufentscheidungen mit KI-Unterstützung</span>
+          <span class="block text-xs" style="color:#7a7a88;">zeigt den konkreten Mehrwert von BuyRight-AI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 md:py-32 section-dark" id="warum" style="background:#050508;">
+    <div class="max-w-[1100px] mx-auto px-5 md:px-10">
+      <div class="text-center mb-14">
+        <h2 class="reveal text-3xl md:text-5xl font-bold leading-[1.1] tracking-tight mb-5" style="color:#f0f0f2;">Warum BuyRight-AI</h2>
+        <p class="reveal text-lg max-w-[650px] mx-auto leading-relaxed" style="color:#9999a1;">Vier klare Vorteile für alle, die smarter einkaufen und Fehlkäufe vermeiden wollen.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="reveal p-7 rounded-2xl card-hover" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);">
+          <h3 class="text-xl font-bold mb-3" style="color:#f0f0f2;">KI-Analyse ohne Konto</h3>
+          <p style="color:#9a9aaa;">Keine Pflichtregistrierung. Direkt starten und sofort Produkte analysieren lassen.</p>
+        </div>
+        <div class="reveal p-7 rounded-2xl card-hover" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);">
+          <h3 class="text-xl font-bold mb-3" style="color:#f0f0f2;">Unabhängige Empfehlungen</h3>
+          <p style="color:#9a9aaa;">Keine Werbepartnerschaften. Nur echte Daten für deine Kaufentscheidung.</p>
+        </div>
+        <div class="reveal p-7 rounded-2xl card-hover" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);">
+          <h3 class="text-xl font-bold mb-3" style="color:#f0f0f2;">Klarheit statt Datenchaos</h3>
+          <p style="color:#9a9aaa;">KI-Scores, Preisvergleiche und Bewertungsanalysen auf einen Blick.</p>
+        </div>
+        <div class="reveal p-7 rounded-2xl card-hover" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);">
+          <h3 class="text-xl font-bold mb-3" style="color:#f0f0f2;">Praxis-nah für echte Käufe</h3>
+          <p style="color:#9a9aaa;">Suche, Vergleich, Empfehlung und Merkliste für den echten Kaufprozess.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="funktionen" class="py-24 section-alt">
+    <div class="max-w-[1100px] mx-auto px-5 md:px-10">
+      <div class="text-center mb-14">
+        <h2 class="reveal text-3xl md:text-5xl font-bold tracking-tight mb-4">Kernfunktionen, die dir die Entscheidung erleichtern</h2>
+        <p class="reveal text-lg max-w-[680px] mx-auto" style="color:var(--color-muted);">Alle wichtigen BuyRight-AI-Funktionen in einer klaren, schnellen Oberfläche.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <article class="reveal p-7 rounded-2xl bg-white border card-hover accent-hover">
+          <h3 class="text-xl font-bold mb-3">KI-Produktanalyse</h3>
+          <p style="color:var(--color-muted);">Unsere KI analysiert Hunderte Datenpunkte pro Produkt: Preis, Specs, Bewertungen und Verfügbarkeit.</p>
+        </article>
+        <article class="reveal p-7 rounded-2xl bg-white border card-hover accent-hover">
+          <h3 class="text-xl font-bold mb-3">Smarter Produktvergleich</h3>
+          <p style="color:var(--color-muted);">Vergleiche bis zu 5 Produkte mit KI-generierten Insights und einer klaren Empfehlung.</p>
+        </article>
+        <article class="reveal p-7 rounded-2xl bg-white border card-hover accent-hover">
+          <h3 class="text-xl font-bold mb-3">Personalisierte Kaufberatung</h3>
+          <p style="color:var(--color-muted);">Basierend auf deinen Präferenzen gibt die KI eine klare, unabhängige Kaufempfehlung.</p>
+        </article>
+        <article class="reveal p-7 rounded-2xl bg-white border card-hover accent-hover">
+          <h3 class="text-xl font-bold mb-3">Preishistorie &amp; Transparenz</h3>
+          <p style="color:var(--color-muted);">Sieh auf einen Blick, ob ein Preis fair ist, und behalte Preisentwicklungen im Blick.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 section-dark" id="process" style="background:#090a0e;">
+    <div class="max-w-[1100px] mx-auto px-5 md:px-10">
+      <div class="text-center mb-10">
+        <h2 class="reveal text-3xl md:text-5xl font-bold tracking-tight mb-4" style="color:#f0f0f2;">Hauptprozess als Kauffluss</h2>
+        <p class="reveal text-lg max-w-[760px] mx-auto" style="color:#a2a2ab;">Das Ziel von BuyRight-AI: aus Unsicherheit einen klaren, sicheren Kaufentscheid machen. Der Ablauf unten zeigt den realen Weg von der Produktsuche zur Kaufentscheidung.</p>
+      </div>
+      <div class="reveal process-shell" id="processFlow">
+        <div class="process-track">
+          <div class="process-track__bar" id="processFlowBar"></div>
+          <div class="process-track__dot" id="processFlowDot"></div>
+        </div>
+        <div class="process-grid">
+          <article class="process-step process-step--active" tabindex="0">
+            <div class="process-step__index">01</div>
+            <h3 class="process-step__title">Produkt eingeben</h3>
+            <p class="process-step__text">Such nach einem Produkt oder füge einen Link ein. BuyRight-AI startet sofort.</p>
+            <p class="process-step__hint">Zum Aufklappen klicken</p>
+            <div class="process-step__more">Kein Login nötig – du legst direkt los.</div>
+          </article>
+          <article class="process-step" tabindex="0">
+            <div class="process-step__index">02</div>
+            <h3 class="process-step__title">KI analysiert</h3>
+            <p class="process-step__text">Unsere KI wertet Preise, Specs und Bewertungen in Echtzeit aus.</p>
+            <p class="process-step__hint">Zum Aufklappen klicken</p>
+            <div class="process-step__more">Du siehst, welche Merkmale wirklich entscheidend sind.</div>
+          </article>
+          <article class="process-step" tabindex="0">
+            <div class="process-step__index">03</div>
+            <h3 class="process-step__title">Vergleichen &amp; Entscheiden</h3>
+            <p class="process-step__text">Klare KI-Empfehlung, Vergleichstabelle und Preisbewertung auf einen Blick.</p>
+            <p class="process-step__hint">Zum Aufklappen klicken</p>
+            <div class="process-step__more">Kein Raten mehr – nur faktenbasierte Entscheidungen.</div>
+          </article>
+          <article class="process-step" tabindex="0">
+            <div class="process-step__index">04</div>
+            <h3 class="process-step__title">Sicher kaufen</h3>
+            <p class="process-step__text">Kaufe mit Vertrauen zum besten Preis-Leistungs-Verhältnis.</p>
+            <p class="process-step__hint">Zum Aufklappen klicken</p>
+            <div class="process-step__more">Merkliste speichern oder Empfehlung per Link teilen.</div>
+          </article>
+        </div>
+        <p class="process-target"><strong>Ziel:</strong> Mehr Kaufsicherheit, weniger Fehlkäufe und ein klarer Kaufentscheid in Minuten.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 section-dark" style="background:#0f1117;" id="ablauf">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10">
+      <div class="text-center mb-12">
+        <h2 class="reveal text-3xl md:text-5xl font-bold tracking-tight mb-4" style="color:#f0f0f2;">So funktioniert es in 3 Schritten</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="reveal p-7 rounded-2xl" style="background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);">
+          <span class="text-sm font-bold uppercase tracking-wider" style="color:#3b82f6;">Schritt 1</span>
+          <h3 class="text-xl font-bold mt-2 mb-2" style="color:#f0f0f2;">Produkt suchen</h3>
+          <p style="color:#9a9aaa;">Gib ein Produkt oder einen Link ein. Die KI startet sofort mit der Analyse.</p>
+        </div>
+        <div class="reveal p-7 rounded-2xl" style="background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);">
+          <span class="text-sm font-bold uppercase tracking-wider" style="color:#3b82f6;">Schritt 2</span>
+          <h3 class="text-xl font-bold mt-2 mb-2" style="color:#f0f0f2;">KI vergleicht</h3>
+          <p style="color:#9a9aaa;">BuyRight-AI analysiert und vergleicht automatisch relevante Produkte und Alternativen.</p>
+        </div>
+        <div class="reveal p-7 rounded-2xl" style="background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);">
+          <span class="text-sm font-bold uppercase tracking-wider" style="color:#3b82f6;">Schritt 3</span>
+          <h3 class="text-xl font-bold mt-2 mb-2" style="color:#f0f0f2;">Smarter kaufen</h3>
+          <p style="color:#9a9aaa;">Du erhältst eine klare Empfehlung und kaufst mit Klarheit zum besten Preis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24" id="faq">
+    <div class="max-w-[900px] mx-auto px-5 md:px-10">
+      <div class="text-center mb-10">
+        <h2 class="reveal text-3xl md:text-5xl font-bold tracking-tight mb-4">Häufige Fragen</h2>
+      </div>
+      <div id="faqList" class="rounded-2xl bg-white border overflow-hidden">
+        <div class="faq-item">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between">
+            <span class="font-semibold">Wie funktioniert BuyRight-AI?</span>
+            <span class="faq-question__icon relative w-5 h-5"></span>
+          </button>
+          <div class="faq-answer px-6 pb-5" style="color:var(--color-muted);">Unsere KI analysiert Produktdaten, Preise und Bewertungen und gibt dir klare, unabhängige Kaufempfehlungen.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between">
+            <span class="font-semibold">Muss ich ein Konto erstellen?</span>
+            <span class="faq-question__icon relative w-5 h-5"></span>
+          </button>
+          <div class="faq-answer px-6 pb-5" style="color:var(--color-muted);">Nein. BuyRight-AI ist ohne Login nutzbar.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between">
+            <span class="font-semibold">Welche Produkte werden analysiert?</span>
+            <span class="faq-question__icon relative w-5 h-5"></span>
+          </button>
+          <div class="faq-answer px-6 pb-5" style="color:var(--color-muted);">Elektronik, Haushaltsgeräte, Software und viele weitere Kategorien.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between">
+            <span class="font-semibold">Sind meine Daten sicher?</span>
+            <span class="faq-question__icon relative w-5 h-5"></span>
+          </button>
+          <div class="faq-answer px-6 pb-5" style="color:var(--color-muted);">Ja. Deine Anfragen werden DSGVO-konform verarbeitet und nicht ohne Einwilligung gespeichert.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 section-dark" id="final-cta" style="background:#050508;">
+    <div class="max-w-[900px] mx-auto px-5 md:px-10 text-center">
+      <h2 class="reveal text-3xl md:text-5xl font-black leading-[1.1] mb-5" style="color:#f0f0f2;">Starte jetzt smarter zu kaufen – kostenlos und ohne Registrierung.</h2>
+      <p class="reveal text-lg max-w-[620px] mx-auto mb-9" style="color:#9a9aaa;">KI-gestützt. Unabhängig. In Sekunden zur richtigen Entscheidung.</p>
+      <div class="reveal flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://buyright-ai.vercel.app/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;padding:14px 30px;background:#2563eb;color:#fff;font-weight:700;border-radius:12px;text-decoration:none;">Jetzt BuyRight-AI starten</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#050508;color:#8e8e93;padding:32px 20px 40px;text-align:center;border-top:1px solid rgba(255,255,255,.08);">
+    <div class="flex items-center justify-center gap-2 mb-2">
+      <img src="app-icon-light.svg" alt="BuyRight-AI" style="width:18px;height:18px;opacity:.85;">
+      <span style="font-weight:700;color:#f0f0f2;">BuyRight-AI</span>
+    </div>
+    <p style="font-size:.9rem;">KI-gestützter Kaufberater. Kostenlos. Unabhängig.</p>
+    <div style="margin-top:12px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-size:.85rem;">
+      <a href="https://buyright-ai.vercel.app/" target="_blank" rel="noopener noreferrer" style="color:#93c5fd;text-decoration:none;">App öffnen</a>
+      <a href="impressum.html" style="color:#93c5fd;text-decoration:none;">Impressum</a>
+      <a href="agb.html" style="color:#93c5fd;text-decoration:none;">AGB</a>
+      <a href="datenschutz.html" style="color:#93c5fd;text-decoration:none;">Datenschutz</a>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Nach oben">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie-Hinweis">
+    <div class="cookie-banner__inner">
+      <h3 style="font-weight:700;font-size:1.05rem;margin-bottom:.45rem;">Hinweis zu Cookies und Datenspeicherung</h3>
+      <p style="font-size:.92rem;line-height:1.6;color:#4d4d55;">BuyRight-AI verwendet technisch notwendige Cookies für eine reibungslose Nutzung. Es gibt keine Pflicht-Cloud und keinen Werbe-Tracker im Analyse-Flow.</p>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:1rem;flex-wrap:wrap;">
+        <button class="cookie-banner__btn cookie-banner__btn--reject" data-cookie-action="reject">Schließen</button>
+        <button class="cookie-banner__btn cookie-banner__btn--accept" data-cookie-action="accept">Verstanden</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

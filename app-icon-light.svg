@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="App Icon – BuyRight-AI">
+  <defs>
+    <linearGradient id="bgLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="blueMain" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="55%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="indigoAccent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" fill="url(#bgLight)"/>
+
+  <!-- Shopping cart handle -->
+  <line x1="108" y1="148" x2="152" y2="148" stroke="url(#blueMain)" stroke-width="26" stroke-linecap="round"/>
+  <line x1="130" y1="148" x2="152" y2="200" stroke="url(#blueMain)" stroke-width="26" stroke-linecap="round"/>
+
+  <!-- Shopping cart body -->
+  <path d="M 152 200 L 172 316 L 360 316 L 380 200 Z" fill="none" stroke="url(#blueMain)" stroke-width="24" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Cart wheels -->
+  <circle cx="212" cy="354" r="24" fill="url(#blueMain)"/>
+  <circle cx="320" cy="354" r="24" fill="url(#blueMain)"/>
+
+  <!-- AI checkmark inside cart (green = right choice) -->
+  <path d="M 204 252 L 244 292 L 328 220" fill="none" stroke="#10b981" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- AI sparkle dots (top right) -->
+  <circle cx="390" cy="148" r="14" fill="url(#indigoAccent)" opacity="0.9"/>
+  <circle cx="422" cy="118" r="9" fill="url(#indigoAccent)" opacity="0.7"/>
+  <circle cx="358" cy="116" r="9" fill="url(#indigoAccent)" opacity="0.7"/>
+  <circle cx="414" cy="176" r="7" fill="url(#indigoAccent)" opacity="0.55"/>
+</svg>
